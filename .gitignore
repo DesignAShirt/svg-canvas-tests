@@ -26,3 +26,9 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+.DS_Store
+www/js
+
+sauce-test.sh
+creds
