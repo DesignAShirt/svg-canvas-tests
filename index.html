@@ -38,7 +38,119 @@
 
         <hr>
 
+        <h3>Summary</h3>
+        <p>Pretty much any recent version of Chrome, Firefox or Safari support native SVG rendering to canvas; and IE9+</p>
+        <p>All IEs (IE11 and down) make canvas write-only with SVG.  The same for Safari 7.0 and down, though Safari 7.1 supports SVG.</p>
+
+        <hr>
+
         <h3>Native Rendering of SVG to Canvas</h3>
+        <pre>
+          var img = new Image();
+          img.onload = function() {
+            context.drawImage(img, 0, 0);
+          };
+          img.src = 'my/relative.svg';
+        </pre>
+        <table>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>26+<br><small>No older version tested</small></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>12+<br><small>No older version tested</small></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td>9+</td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td>5.1.9+</td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td>24<br><small>Only version tested</small></td>
+          </tr>
+        </table>
+
+        <h3>Cross-Origin SVG Rendering</h3>
+        <pre>
+          var img = new Image();
+          img.onload = function() {
+            context.drawImage(img, 0, 0);
+          };
+          img.crossOrigin = 'anonymous';
+          img.src = 'https://not.mydomain.example/crossorigin.svg';
+        </pre>
+        <table>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>26+<br><small>No older version tested</small></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>12+<br><small>No older version tested</small></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td>9+</td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td>5.1.9+</td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td>24<br><small>Only version tested</small></td>
+          </tr>
+        </table>
+
+        <h3>SVG Data URIs</h3>
+        <pre>
+          var img = new Image();
+          img.onload = function() {
+            context.drawImage(img, 0, 0);
+          };
+          img.src = 'data:image/svg+xml;base64, ...';
+        </pre>
+        <table>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td>26+<br><small>No older version tested</small></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>12+<br><small>No older version tested</small></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td>9+</td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td>5.1.9+</td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td>24<br><small>Only version tested</small></td>
+          </tr>
+        </table>
+
+        <h3>Canvas toDataURL with SVG</h3>
         <pre>
           var img = new Image();
           img.onload = function() {
@@ -51,118 +163,26 @@
           <tr>
             <th>Browser</th>
             <th>Version</th>
-            <th>Comments</th>
           </tr>
           <tr>
             <td>Chrome</td>
-            <td></td>
-            <td></td>
+            <td>31+</td>
           </tr>
           <tr>
             <td>Firefox</td>
-            <td></td>
-            <td></td>
+            <td>12+<br><small>No older version tested</small></td>
           </tr>
           <tr>
             <td>Internet Explorer</td>
-            <td></td>
-            <td></td>
+            <td>Not Supported</td>
           </tr>
           <tr>
             <td>Safari</td>
-            <td></td>
-            <td></td>
+            <td>7.1</td>
           </tr>
           <tr>
             <td>Opera</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <h3>Cross-Origin SVG Rendering</h3>
-        <pre>
-          var img = new Image();
-          img.onload = function() {
-            context.drawImage(img, 0, 0);
-            console.log('datauri', canvas.toDataURL());
-          };
-          img.crossOrigin = 'anonymous';
-          img.src = 'https://not.mydomain.example/crossorigin.svg';
-        </pre>
-        <table>
-          <tr>
-            <th>Browser</th>
-            <th>Version</th>
-            <th>Comments</th>
-          </tr>
-          <tr>
-            <td>Chrome</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Firefox</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Internet Explorer</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Safari</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Opera</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <h3>SVG Data URIs</h3>
-        <pre>
-          var img = new Image();
-          img.onload = function() {
-            context.drawImage(img, 0, 0);
-            console.log('datauri', canvas.toDataURL());
-          };
-          img.crossOrigin = 'anonymous';
-          img.src = 'data:image/svg+xml;base64, ...';
-        </pre>
-        <table>
-          <tr>
-            <th>Browser</th>
-            <th>Version</th>
-            <th>Comments</th>
-          </tr>
-          <tr>
-            <td>Chrome</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Firefox</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Internet Explorer</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Safari</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Opera</td>
-            <td></td>
-            <td></td>
+            <td>24<br><small>Only version tested</small></td>
           </tr>
         </table>
       </section>
