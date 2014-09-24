@@ -1,1 +1,4 @@
 .DS_Store
+creds
+node_modules
+sauce-test.sh
