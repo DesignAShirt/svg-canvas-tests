@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Test Current Browser</title>
+    <link rel="shortcut icon" type="image/png" href="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine.css"> 
+    <style type="text/css">
+    canvas,img {
+      border: 1px solid #ccc;
+    }
+
+    .html-reporter {
+      border-top: 10px solid #ccc;
+      border-bottom: 10px solid #ccc;
+      margin: 10px 0;
+    }
+
+    code {
+      display: block;
+      background: #afafaf;
+      padding: 5px;
+      margin-left: 20px;
+      margin-top:20px;
+      margin-bottom:20px;
+      border-radius:3px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>SVG &raquo; Canvas &raquo; DataURL Tests</h1>
+    <p>Run this in a browser to see how it does.</p>
+
+    <p>Note: No file:// support right now.  Use a web server.</p>
+    <code>python -m SimpleHTTPServer 8000</code>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine-html.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/boot.js"></script>
+    <script src="lib/index.js"></script>
+    <script src="test/tests.js"></script>
+  </body>
+</html>

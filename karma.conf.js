@@ -11,8 +11,12 @@ module.exports = function(config) {
     files: [
       'lib/index.js',
       'test/tests.js',
-      {pattern: 'test/i/*.*', watched: false, included: false, served: true}
+      {pattern: 'assets/*.*', watched: false, included: false, served: true}
     ],
+
+    proxies: {
+      '/assets/': '/base/assets/'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
