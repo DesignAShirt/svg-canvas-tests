@@ -35,23 +35,132 @@
         <p>It <a href="http://stackoverflow.com/questions/8158312/rasterizing-an-in-document-svg-to-canvas/8159917">wasn't long ago</a> that rendering an SVG immediately made the canvas write-only -- even if the SVG was relative or a data uri.</p>
 
         <p>The goal of this site is to determine exactly which browsers allow what and when so workarounds like fabric.js and canvg can be avoided.</p>
-        
+
+        <hr>
+
         <h3>Native Rendering of SVG to Canvas</h3>
         <pre>
-          var canvas, context; // get the canvas/context from the page
           var img = new Image();
           img.onload = function() {
+            context.drawImage(img, 0, 0);
+            console.log('datauri', canvas.toDataURL());
           };
           img.src = 'my/relative.svg';
         </pre>
         <table>
           <tr>
-            <th>Browser / Details</th>
-            <th>Supported?</th>
+            <th>Browser</th>
+            <th>Version</th>
             <th>Comments</th>
           </tr>
           <tr>
+            <td>Chrome</td>
             <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <h3>Cross-Origin SVG Rendering</h3>
+        <pre>
+          var img = new Image();
+          img.onload = function() {
+            context.drawImage(img, 0, 0);
+            console.log('datauri', canvas.toDataURL());
+          };
+          img.crossOrigin = 'anonymous';
+          img.src = 'https://not.mydomain.example/crossorigin.svg';
+        </pre>
+        <table>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+            <th>Comments</th>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <h3>SVG Data URIs</h3>
+        <pre>
+          var img = new Image();
+          img.onload = function() {
+            context.drawImage(img, 0, 0);
+            console.log('datauri', canvas.toDataURL());
+          };
+          img.crossOrigin = 'anonymous';
+          img.src = 'data:image/svg+xml;base64, ...';
+        </pre>
+        <table>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+            <th>Comments</th>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Opera</td>
             <td></td>
             <td></td>
           </tr>
