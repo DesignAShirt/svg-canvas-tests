@@ -9,8 +9,8 @@ test() {
 }
 
 if [ -n "$SAUCE_USERNAME" ] && [ -n "$SAUCE_ACCESS_KEY" ]; then
-  KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='11'   PLATFORM='Windows 8.1'   test;
-  KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='11'   PLATFORM='Windows 7'   test;
+  # KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='11'   PLATFORM='Windows 8.1'   test;
+  # KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='11'   PLATFORM='Windows 7'   test;
   KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='10'   PLATFORM='Windows 7'   test;
   KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='9'   PLATFORM='Windows 7'   test;
   KARMA_SAUCE='yes' BROWSER='internet explorer'   VERSION='8'   PLATFORM='Windows 7'   test;
