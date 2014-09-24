@@ -54,11 +54,12 @@ module.exports = function(config) {
     conf.sauceLabs = {
       testName: 'SVG to Canvas Tests',
       recordVideo: false,
-      recordScreenshots: false // these don't really work...
+      recordScreenshots: true // these don't really work...
     };
 
     conf.customLaunchers = customLaunchers;
     conf.browsers = Object.keys(customLaunchers);
+    conf.browserNoActivityTimeout = 30000;
   }
   else {
     conf.browsers = [ 'Chrome', 'Safari', 'Firefox' ];
