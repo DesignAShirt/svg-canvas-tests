@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Test Current Browser</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.css">
+    <style type="text/css">
+    canvas,img {
+      border: 1px solid #ccc;
+    }
+
+    .html-reporter {
+      border-top: 10px solid #ccc;
+      border-bottom: 10px solid #ccc;
+      margin: 10px 0;
+    }
+
+    code {
+      display: block;
+      background: #afafaf;
+      padding: 5px;
+      margin-left: 20px;
+      margin-top:20px;
+      margin-bottom:20px;
+      border-radius:3px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Rendering a SVG data uri to Canvas</h1>
+
+    <p>Click <a href="index.html">here for more information</a>.</p>
+
+    <h1>SVG</h1>
+    <iframe></iframe>
+    
+    <h1>Canvas</h1>
+    <canvas></canvas>
+    
+    <h1>Img</h1>
+    <img>
+
+    <script>
+    var svgDoc = '<svg width="400" height="400" viewPort="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="390" height="390"/></svg>';
+    var svg = 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(svgDoc)));
+
+    var canvas = document.querySelector('canvas');
+    var context = canvas.getContext('2d');
+    var img = new Image();
+
+    img.onload = function() {
+      img.onload = img.onerror = null;
+      context.drawImage(img, 0, 0);
+      document.querySelector('img').src = canvas.toDataURL(); 
+    };
+
+    img.onerror = function() {
+      img.onload = img.onerror = null;
+      console.log('err loading image');
+    };
+
+    img.src = svg;
+    document.querySelector('iframe').src = svg;
+    </script>
+
+  </body>
+</html>
