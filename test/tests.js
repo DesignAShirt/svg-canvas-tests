@@ -11,11 +11,11 @@ describe('in and out', function() {
 
   describe('relative', function () {
     it('pngs', function(done) {
-      renderUrl('/assets/designashirt.png', done);
+      renderUrl('assets/designashirt.png', done);
     });
 
     it('svgs', function(done) {
-      renderUrl('/assets/publicdomain.svg', done);
+      renderUrl('assets/publicdomain.svg', done);
     });
   });
 
