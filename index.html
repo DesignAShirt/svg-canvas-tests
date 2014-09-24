@@ -29,18 +29,23 @@
         <h3><a name="getting-svg-in-and-out-of-canvas" class="anchor" href="#getting-svg-in-and-out-of-canvas"><span class="octicon octicon-link"></span></a>Getting SVG in and out of <code>canvas</code></h3>
 
         <p><a href="test.html">Click here</a> to see if your browser supports getting SVG to Canvas to PNG (canvas.toDataURL).  And here's a <a href="http://jsbin.com/jejefuluqowe/3">barebones example</a> and this <a href="control.html">test here</a> to confirm your browser supports canvas and toDataURL.</p>
+
+        <hr>
+
+        <h3>Summary</h3>
+        <p><b>All recent browsers except IE and Safari support getting image data from a canvas with an SVG.</b></p>
+        
+        <p>Pretty much any recent version of Chrome, Firefox or Safari support native SVG rendering to canvas; and IE9+</p>
+        
+        <p>Both IE and Safari make the canvas write only: IE11 and down, and Safari 7.0 and down. <b>Safari 7.1 fixes this.</b></p>
+        
+        <hr>
         
         <h3>What is this?</h3>
         <p>It's not news that you can render a variety of images on <code>&lt;canvas&gt;</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Canvas_tutorial/Using_images#Drawing_images">drawImage()</a>; including PNG, JPEG and even SVG.</p>
         <p>It <a href="http://stackoverflow.com/questions/8158312/rasterizing-an-in-document-svg-to-canvas/8159917">wasn't long ago</a> that rendering an SVG immediately made the canvas write-only -- even if the SVG was relative or a data uri.</p>
 
         <p>The goal of this site is to determine exactly which browsers allow what and when so workarounds like fabric.js and canvg can be avoided.</p>
-
-        <hr>
-
-        <h3>Summary</h3>
-        <p>Pretty much any recent version of Chrome, Firefox or Safari support native SVG rendering to canvas; and IE9+</p>
-        <p>All IEs (IE11 and down) make canvas write-only with SVG.  The same for Safari 7.0 and down, though Safari 7.1 supports SVG.</p>
 
         <hr>
 
